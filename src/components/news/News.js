@@ -34,14 +34,21 @@ componentDidMount() {
 renderItems(){
   const src = 'https://placeimg.com/640/480/arch'
   return this.state.news.map((item) =>(
-    <Card.Group>
-      <Card
-        image={src}
-        header='Elliot Baker'
-        meta='Friend'
-        description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
-      />
-    </Card.Group>
+
+    <div className="col s4">
+      <div className="card">
+        <div className="card-image">
+          <img src={item.urlToImage} alt={item.title} />
+          <span className="card-title">{item.source.name}</span>
+        </div>
+        <div className="card-content">
+          <p>{item.title}</p>
+        </div>
+        <div className="card-action">
+          <a href={item.url} target="_blank">Full article</a>
+        </div>
+      </div>
+    </div>
 
   ));
 }
@@ -49,9 +56,9 @@ renderItems(){
 
     render() {
         return (
-          <Grid.Row>
+          <div className="row">
             {this.renderItems()}
-          </Grid.Row>
+          </div>
         );
     }
 }
