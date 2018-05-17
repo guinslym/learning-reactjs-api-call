@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import News from './News'
-import Menu from './Menu'
+import News from './news/News'
+import Menu from './menu/Menu'
 
 class App extends Component {
 
